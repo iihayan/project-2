@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
-  "name": "PROJECT NAME",
-  "description": "PROJECT DESCRIPTION",
+  "name": "Sara's First Extension",
+  "description": "This is my first attempt at a browser extension!",
   "version": "0.1",
   "content_scripts": [
     {
@@ -14,5 +14,8 @@
       ],
       "run_at": "document_end"
     }
-  ]
+  ],
+  "icons": {
+    "128": "images/icon.png"
+  }
 }
