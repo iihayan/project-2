@@ -14,10 +14,22 @@
 //
 // }
 
+// var myDiv = document.createElement("div");
+// myDiv.style.setProperty("position", "absolute");
+// myDiv.style.setProperty("top","100px");
+// myDiv.style.setProperty("left","250px");
+// myDiv.innerHTML = "HELLO";
+// document.body.appendChild(myDiv);
+
+chrome.storage.sync.get({fromStored:"", toStored:""}, function(result) {
+
 var html = document.querySelector('html');
 var walker = document.createTreeWalker(html,NodeFilter.SHOW_TEXT);
 
 var node;
 while (node = walker.nextNode()) {
-  node.nodeValue = node.nodeValue.replace(/truth/gi, '"truth"')
+  var re = new RegExp(result.fromStored,"gi");
+  node.nodeValue = node.nodeValue.replace(re, result.toStored);
 }
+
+});

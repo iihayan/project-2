@@ -3,6 +3,7 @@
   "name": "Sara's First Extension",
   "description": "This is my first attempt at a browser extension!",
   "version": "0.1",
+  "permissions": ["storage"],
   "content_scripts": [
     {
       "matches": [
@@ -15,6 +16,7 @@
       "run_at": "document_idle"
     }
   ],
+  "options_page": "options.html",
   "icons": {
     "128": "images/icon.png"
   }
